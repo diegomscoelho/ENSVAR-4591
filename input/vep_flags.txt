@@ -1,0 +1,3 @@
+--custom /nfs/production/flicek/ensembl/variation/data/ClinVar/clinvar_20210102.vcf.gz,clinvar_20210102,vcf,exact,0,CLNSIG
+--custom /nfs/production/flicek/ensembl/variation/data/TopMed/TOPMED_GRCh38_20180418.vcf.gz,topmed_20180418,vcf,exact,0,TOPMED
+--custom /nfs/production/flicek/ensembl/variation/data/UK10K/UK10K_COHORT.20160215.sites.GRCh38.vcf.gz,uk10k_20160215,vcf,exact,0,AF_TWINSUK,AF_ALSPAC
