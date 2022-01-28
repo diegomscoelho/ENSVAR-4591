@@ -4,7 +4,7 @@ nextflow.enable.dsl=2
 
 params.repeat    = 10 // times to repeat each run
 params.vep       = "/hps/software/users/ensembl/repositories/diegomscoelho/ensembl-vep/vep"
-params.cache     = "/nfs/production/flicek/ensembl/variation/data/VEP"
+params.cache     = "/nfs/production/flicek/ensembl/variation/data/VEP/tabixconverted"
 params.fasta     = "/nfs/production/flicek/ensembl/variation/data/Homo_sapiens.GRCh38.dna.toplevel.fa.gz"
 params.vcf       = "/nfs/production/flicek/ensembl/variation/data/PlatinumGenomes/NA12878.vcf.gz"
 
