@@ -45,11 +45,21 @@ process vep {
     output:
         path '*.out' optional true
     """
-    name=vep-arg-\$( echo ${args} | sed 's/-//g' | sed 's/ /-/g' )
-    log=\${name}-\${LSB_JOBID}-${iter}.out
+    name=\$( echo ${args} | sed 's/-//g' | sed 's/ /-/g' )
+    output_name=''
+    if echo \${name} | grep -q TOPMED; then
+        output_name="TOPMED";
+    fi
+    if echo \${name} | grep -q clinvar; then
+        output_name="\${output_name}_CLINVAR";
+    fi
+    if echo \${name} | grep -q UK10K; then
+        output_name="\${output_name}_UK10K";
+    fi
+    log=vep-arg-\${output_name#_}-\${LSB_JOBID}-${iter}.out
     perl ${vep} \
          --i $vcf \
-         --o \${name}-\${LSB_JOBID}.txt \
+         --o \${output_name#_}-\${LSB_JOBID}.txt \
          --offline \
          --cache \
          --dir_cache ${cache} \
